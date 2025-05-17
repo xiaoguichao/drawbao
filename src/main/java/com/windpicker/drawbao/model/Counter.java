@@ -1,4 +1,4 @@
-package com.tencent.wxcloudrun.model;
+package com.windpicker.drawbao.model;
 
 import lombok.Data;
 

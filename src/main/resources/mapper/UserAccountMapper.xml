@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.windpicker.drawbao.mapper.UserAccountMapper">
+
+    <resultMap id="UserAccountMap" type="com.windpicker.drawbao.model.UserAccount">
+        <id column="id" property="id"/>
+        <result column="wxid" property="wxid"/>
+        <result column="chances" property="chances"/>
+        <result column="rewards" property="rewards"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+
+    <select id="findByWxid" resultMap="UserAccountMap">
+        SELECT * FROM user_account WHERE wxid = #{wxid}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_account(wxid, chances, rewards)
+        VALUES (#{wxid}, #{chances}, #{rewards})
+    </insert>
+
+    <update id="update">
+        UPDATE user_account
+        SET chances = #{chances}, rewards = #{rewards}
+        WHERE wxid = #{wxid}
+    </update>
+
+</mapper>

@@ -1,0 +1,30 @@
+# Java 编译
+/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# maven wrapper
+.mvn/
+!**/mvn/wrapper/maven-wrapper.jar
+
+# IDEA 配置
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# 日志和运行时文件
+*.log
+logs/
+*.pid
+*.tmp
+hs_err_pid*
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 单元测试报告
+/test-output/
